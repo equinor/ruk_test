@@ -8,17 +8,6 @@ run-name: Deploy to ${{ inputs.environment }} from ${{ github.head_ref || github
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
       environment:
         type: environment
 
@@ -39,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo ${{ env.Greeting }}
+          echo ${{ vars.TEST }}
           echo ${{ inputs.environment }}
 
       # Runs a set of commands using the runners shell
