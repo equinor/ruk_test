@@ -2,7 +2,7 @@
 
 name: CI
 
-run-name: Deploy to ${{ inputs.environment }} from ${{ github.ref }}
+run-name: Deploy to ${{ inputs.environment }} from ${{ github.head_ref || github.ref_name }}
 
 # Controls when the workflow will run
 on:
